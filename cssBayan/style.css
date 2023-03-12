@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  transition: all .7s ease-in-out;
+}
+
+body {
+  background-color: rgb(22, 19, 24);
+  min-width: 20rem;
+}
+
+.accordion {
+  max-width: 52%;
+  margin: 0 auto;
+  padding: 4% 0;
+}
+
+.accordion .title svg {
+  visibility: hidden;
+}
+
+
+.accordion_input {
+  display: none;
+}
+
+.title {
+  padding: 0.8rem;
+  background-color: rgb(162, 132, 168);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text {
+  color: rgb(84, 0, 180);
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+
+
+.accordion_input:checked ~ label {
+  background-color: #ccc;
+}
+  
+.meme {
+  max-width: 0%;
+  max-height: 0%;
+  object-fit: cover;
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+}
+
+.content {
+  max-width: 100%;
+  max-height: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion_input:checked ~ .content .meme {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.accordion_input:checked ~ .title .text {
+  color: #000000;
+}
+
+.accordion_input:checked ~ .content {
+  padding: 3%;
+  max-height: 100%;
+  min-height: max-content;
+}
+
+.accordion_input:checked ~ .title svg {
+  transform: rotate(45deg);
+}
+
+.string:active .content .meme {
+  opacity: 0.7;
+}
+
+.string:active .title .text {
+  color: rgb(84, 0, 180);
+}
+
+.string:active .title svg path {
+ stroke: rgb(84, 0, 180);
+}
+
+@media (hover: hover) {
+  .accordion_input:hover ~ .title svg {
+    transform: rotate(45deg);
+  }
+
+  .accordion:hover .string .text {
+    color: rgb(0, 0, 0);
+  }
+
+  .accordion:hover .title svg {
+    visibility: visible;
+  }
+
+  .string:hover {
+    background-color: rgb(172, 134, 243);
+  }
+  
+  .accordion:hover .text {
+    color: rgb(0, 0, 0);
+  }
+
+  .accordion_input:hover ~ .content .meme  {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  .accordion_input:hover ~ .content {
+    padding: 3%;
+    max-height: 100%;
+    min-height: max-content;
+  }
+
+}
+
+@media screen and (max-width: 1280px) {
+  .accordion {
+    max-width: 65%;
+  }
+  .text {
+    font-size: 1.6rem;
+  }
+  svg {
+    width: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .accordion {
+    max-width: 80%;
+  }
+
+  svg {
+    width: 1.8rem;
+  }
+  .text {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .accordion {
+    max-width: 95%;
+  }
+  svg {
+    width: 1.8rem;
+  }
+  .text {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 341px) {
+  .text {
+    font-size: 1.5rem;
+  }
+}
+
